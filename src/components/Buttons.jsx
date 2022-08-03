@@ -4,6 +4,8 @@ const Buttons = () => {
     <div>
       <Button>Normal</Button>
       <Button primary>Primary</Button>
+      <Orangebutton>Orange</Orangebutton>
+      <Button as={ReversedButton}>Reversed Button</Button>
     </div>
   );
 };
@@ -18,5 +20,14 @@ const Button = styled.button`
   background: ${(props) => (props.primary ? 'brown' : 'white')};
   color: ${(props) => (props.primary ? 'white' : 'brown')};
 `;
+
+const Orangebutton = styled(Button)`
+  color: orange;
+  border-color: orange;
+`;
+
+const ReversedButton = (props) => (
+  <Button {...props} children={props.children.split('').reverse()} />
+);
 
 export default Buttons;
