@@ -3,14 +3,25 @@ const Buttons = () => {
   return (
     <div>
       <Button>Normal</Button>
+
+      {/* Adapting based on Props */}
       <Button primary>Primary</Button>
+
+      {/* Based button, but override styles */}
       <Orangebutton>Orange</Orangebutton>
+
+      {/* Use as polymorphic prop */}
       <Button as={ReversedButton}>Reversed Button</Button>
+
+      {/* If simple element, pass props related with HTML attribute */}
+      <CustomizedButton>Very Nice</CustomizedButton>
+
+      {/* If customized element, pass all props */}
+      <CustomizedButton buttonColor="purple">Very Nice</CustomizedButton>
     </div>
   );
 };
 
-// Adapting based on Props
 const Button = styled.button`
   font-size: 1em;
   margin: 1em;
@@ -29,5 +40,14 @@ const Orangebutton = styled(Button)`
 const ReversedButton = (props) => (
   <Button {...props} children={props.children.split('').reverse()} />
 );
+
+const CustomizedButton = styled.button`
+  padding: 0.5em;
+  margin: 0.5em;
+  background: pink;
+  border-color: black;
+  border-radius: 3px;
+  color: ${(props) => props.buttonColor || 'white'};
+`;
 
 export default Buttons;
