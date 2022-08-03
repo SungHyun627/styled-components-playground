@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Title = () => {
   return (
     <Background>
-      <TitleWrapper>Styled Title</TitleWrapper>
+      <TitleWrapper>Styled Components PlayGround</TitleWrapper>
     </Background>
   );
 };
