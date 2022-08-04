@@ -22,7 +22,7 @@ const Buttons = () => {
   );
 };
 
-const Button = styled.button`
+export const Button = styled.button`
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
@@ -30,6 +30,9 @@ const Button = styled.button`
   border-radius: 3px;
   background: ${(props) => (props.primary ? 'brown' : 'white')};
   color: ${(props) => (props.primary ? 'white' : 'brown')};
+  &:hover {
+    color: black;
+  }
 `;
 
 const Orangebutton = styled(Button)`
